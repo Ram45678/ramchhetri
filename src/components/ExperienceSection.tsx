@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -135,7 +136,10 @@ const ExperienceSection = () => {
             Work Experience
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Career Journey</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+        </div>
+
+        <div className="mb-12 text-center section-fade-in">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Experienced at full-cycle recruitment, employer branding, talent pipeline development, 
             data-driven hiring, and stakeholder collaboration.
           </p>

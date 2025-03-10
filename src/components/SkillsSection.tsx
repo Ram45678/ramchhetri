@@ -137,7 +137,10 @@ const SkillsSection = () => {
             Skills & Expertise
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Toolbox</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+        </div>
+
+        <div className="mb-12 text-center section-fade-in">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A comprehensive set of recruitment, analytics, and technical skills honed through years of experience.
           </p>
         </div>
