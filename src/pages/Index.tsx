@@ -47,16 +47,20 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <ExperienceSection />
-        <SkillsSection />
-        <EducationSection />
-        <ContactSection />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="fixed inset-0 bg-grid opacity-30" />
+      <div className="fixed inset-0 bg-dots opacity-40" />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <HeroSection />
+          <ExperienceSection />
+          <SkillsSection />
+          <EducationSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
