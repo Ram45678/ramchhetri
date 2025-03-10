@@ -106,7 +106,7 @@ const EducationSection = () => {
                     )}
                   </div>
                   
-                  <div className="space-y-4 flex-1">
+                  <div className="space-y-4 flex-1 text-left">
                     <div>
                       <h3 className="text-xl font-semibold">{education.institution}</h3>
                       <p className="text-muted-foreground mt-1">{education.degree}</p>
