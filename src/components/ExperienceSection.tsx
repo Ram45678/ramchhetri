@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -76,6 +75,26 @@ const publishedWorks: PublishedWork[] = [
     title: "Update on Recruitment and Measuring Satisfaction",
     url: "https://www.weare.fi/en/update-on-recruitment-and-measuring-satisfaction/",
     description: "An exploration of methods to measure and improve candidate and employee satisfaction."
+  },
+  {
+    title: "10 Best Security Practices in Software Development",
+    url: "https://www.weare.fi/en/10-best-security-practices-in-software-development/",
+    description: "A guide on implementing effective security practices in software development processes."
+  },
+  {
+    title: "How to Become a Data-Driven Organization",
+    url: "https://www.weare.fi/en/how-to-become-a-data-driven-organization/",
+    description: "Strategies for organizations to leverage data for better decision-making and business outcomes."
+  },
+  {
+    title: "Guide to Excelling in Industry 4.0 Era",
+    url: "https://www.weare.fi/en/guide-to-excelling-in-industry-40-era/",
+    description: "An overview of how businesses can adapt and thrive in the fourth industrial revolution."
+  },
+  {
+    title: "Impact of AI on Software Development",
+    url: "https://www.weare.fi/en/impact-of-ai-on-software-development/",
+    description: "An analysis of how artificial intelligence is transforming software development practices and outcomes."
   }
 ];
 
