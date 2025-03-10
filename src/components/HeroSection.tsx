@@ -33,14 +33,14 @@ const HeroSection = () => {
         
         <div className="space-y-6 md:space-y-8 text-center md:text-left">
           <div className="space-y-3 animate-fade-down">
-            <div className="inline-block">
-              <div className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary animate-fadeIn">
-                Talent Acquisition Specialist
-              </div>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
               Ram Chhetri
             </h1>
+            <div className="inline-block">
+              <div className="px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm md:text-base text-primary animate-fadeIn">
+                Talent Acquisition Specialist
+              </div>
+            </div>
           </div>
           
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground animate-fadeIn" style={{ animationDelay: "0.2s" }}>
