@@ -35,6 +35,17 @@ const Index = () => {
     };
   }, []);
 
+  // Set page title and metadata
+  useEffect(() => {
+    document.title = "Ram Chhetri - Talent Acquisition Specialist";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Ram Chhetri - Result-driven Talent Acquisition Specialist with extensive experience in technical recruitment, specializing in engineering, cloud, and cybersecurity roles.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

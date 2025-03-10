@@ -2,7 +2,8 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Briefcase, Calendar, MapPin, Award, ChevronRight } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, Award, ChevronRight, FileText, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ExperienceItem {
   company: string;
@@ -12,6 +13,12 @@ interface ExperienceItem {
   responsibilities: string[];
   achievements?: string[];
   link?: string;
+}
+
+interface PublishedWork {
+  title: string;
+  url: string;
+  description: string;
 }
 
 const experiences: ExperienceItem[] = [
@@ -51,6 +58,24 @@ const experiences: ExperienceItem[] = [
       "Identified and researched new prospective clients, contributing to business development efforts."
     ],
     link: "#",
+  }
+];
+
+const publishedWorks: PublishedWork[] = [
+  {
+    title: "Innovative Culture and Product Development",
+    url: "https://www.weare.fi/en/innovative-culture-and-product-development/",
+    description: "An article discussing how innovative company culture impacts product development success."
+  },
+  {
+    title: "Our Values in Recruitment",
+    url: "https://www.weare.fi/en/our-values-in-recruitment/",
+    description: "Insights on value-based recruitment approaches and how they contribute to company culture."
+  },
+  {
+    title: "Update on Recruitment and Measuring Satisfaction",
+    url: "https://www.weare.fi/en/update-on-recruitment-and-measuring-satisfaction/",
+    description: "An exploration of methods to measure and improve candidate and employee satisfaction."
   }
 ];
 
@@ -164,6 +189,33 @@ const ExperienceSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16 section-fade-in">
+          <Card className="border border-border/60 bg-primary/5 backdrop-blur-sm overflow-hidden">
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl font-semibold mb-6 flex items-center">
+                <FileText className="h-5 w-5 mr-2 text-primary" />
+                Published Work
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {publishedWorks.map((work, index) => (
+                  <Card key={index} className="border border-border/40 bg-card/30 hover:bg-card/60 transition-colors">
+                    <CardContent className="p-5 space-y-4">
+                      <h4 className="font-medium text-base line-clamp-2">{work.title}</h4>
+                      <p className="text-sm text-muted-foreground line-clamp-3">{work.description}</p>
+                      <Button variant="outline" size="sm" asChild className="w-full mt-2 gap-1">
+                        <a href={work.url} target="_blank" rel="noopener noreferrer">
+                          Read Article <ExternalLink className="h-3 w-3 ml-1" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

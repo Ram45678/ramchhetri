@@ -2,7 +2,8 @@
 import { useEffect, useRef } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Calendar, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, BookOpen, ExternalLink, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface Education {
   institution: string;
@@ -10,6 +11,8 @@ interface Education {
   period: string;
   location: string;
   description?: string;
+  logo?: string;
+  grade?: string;
 }
 
 const educations: Education[] = [
@@ -19,6 +22,15 @@ const educations: Education[] = [
     period: "Sept 2024 - Present",
     location: "Finland",
     description: "Pursuing advanced studies in business analytics, focusing on big data techniques and artificial intelligence applications in business contexts."
+  },
+  {
+    institution: "JAMK University of Applied Sciences",
+    degree: "Bachelor of Business Administration - BBA, International Business",
+    period: "Jan 2020 - Apr 2022",
+    location: "Finland",
+    description: "Focused on international business operations, digital marketing, and cross-cultural management. Completed thesis on blockchain applications in HR recruitment.",
+    logo: "/lovable-uploads/115ebd73-b54a-44f6-8e05-359d31eec18c.png",
+    grade: "4.29/5"
   }
 ];
 
@@ -74,14 +86,32 @@ const EducationSection = () => {
             >
               <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0 flex items-center justify-center h-20 w-20 rounded-full bg-primary/10 border border-primary/20">
-                    <GraduationCap className="h-8 w-8 text-primary" />
+                  <div className="flex-shrink-0">
+                    {education.logo ? (
+                      <div className="h-20 w-20 overflow-hidden">
+                        <img 
+                          src={education.logo} 
+                          alt={education.institution} 
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary/10 border border-primary/20">
+                        <GraduationCap className="h-8 w-8 text-primary" />
+                      </div>
+                    )}
                   </div>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex-1">
                     <div>
                       <h3 className="text-xl font-semibold">{education.institution}</h3>
                       <p className="text-muted-foreground mt-1">{education.degree}</p>
+                      {education.grade && (
+                        <div className="mt-1 flex items-center gap-2">
+                          <Award className="h-4 w-4 text-primary" />
+                          <span className="text-sm font-medium">Grade: {education.grade}</span>
+                        </div>
+                      )}
                     </div>
                     
                     <div className="flex flex-wrap gap-4 text-sm">
@@ -106,7 +136,35 @@ const EducationSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 section-fade-in">
+        <div className="mt-12 section-fade-in">
+          <Card className="border border-border/60 bg-primary/5 backdrop-blur-sm">
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <BookOpen className="h-5 w-5 mr-2 text-primary" />
+                Research & Thesis
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-medium text-lg mb-2">Implementation of Blockchain Technology into Human Resource Recruitment</h4>
+                  <p className="text-muted-foreground mb-4">
+                    Research exploring how blockchain technology can revolutionize recruitment processes, enhancing security, efficiency, and transparency in HR operations.
+                  </p>
+                  <Button variant="outline" size="sm" asChild className="gap-2">
+                    <a 
+                      href="https://www.theseus.fi/handle/10024/743680" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      View Publication <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-12 section-fade-in">
           <Card className="border border-border/60 bg-primary/5 backdrop-blur-sm">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl font-semibold mb-4 flex items-center">
