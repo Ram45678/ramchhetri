@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import ExperienceSection from '../components/ExperienceSection';
 import SkillsSection from '../components/SkillsSection';
+import LinkedInRecognition from '../components/LinkedInRecognition';
 import EducationSection from '../components/EducationSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -55,6 +56,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <ExperienceSection />
+          <LinkedInRecognition />
           <SkillsSection />
           <EducationSection />
           <ContactSection />
