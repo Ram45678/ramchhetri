@@ -63,13 +63,13 @@ const skills: Skill[] = [
   },
   { 
     name: "Python", 
-    proficiency: 75, 
+    proficiency: 50, 
     category: 'technical',
     icon: <Code className="h-5 w-5 text-primary" />
   },
   { 
     name: "SQL", 
-    proficiency: 70, 
+    proficiency: 50, 
     category: 'technical',
     icon: <Code className="h-5 w-5 text-primary" />
   },
@@ -189,8 +189,8 @@ const SkillsSection = () => {
         <div className="mt-16 section-fade-in">
           <div className="p-6 md:p-8 border border-border/60 bg-card/50 backdrop-blur-sm rounded-lg">
             <h3 className="text-xl font-semibold mb-4 flex items-center">
-              <Brain className="h-5 w-5 mr-2 text-primary" />
-              Areas of Expertise
+              <Briefcase className="h-5 w-5 mr-2 text-primary" />
+              Recruitment Experience
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
