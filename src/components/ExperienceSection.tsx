@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,7 +12,8 @@ interface ExperienceItem {
   location: string;
   responsibilities: string[];
   achievements?: string[];
-  link?: string;
+  link: string;
+  logo: string;
 }
 
 interface PublishedWork {
@@ -43,7 +45,8 @@ const experiences: ExperienceItem[] = [
       "Increased company career page visits, applicant count and conversion rate.",
       "Awarded Top 25% of LinkedIn recruiter for consistent excellence in sourcing and engaging talent from LinkedIn."
     ],
-    link: "#",
+    link: "https://www.weare.fi/en/",
+    logo: "/lovable-uploads/9cd06576-3a10-40e4-8174-e326f27bacb1.png",
   },
   {
     company: "Digipool Group Oy",
@@ -57,7 +60,8 @@ const experiences: ExperienceItem[] = [
       "Partnered with clients to understand staffing needs, reducing time-to-fill days significantly.",
       "Identified and researched new prospective clients, contributing to business development efforts."
     ],
-    link: "#",
+    link: "https://digipool.fi/",
+    logo: "/lovable-uploads/047c180f-32a9-4c5f-a5de-5122c40fc053.png",
   }
 ];
 
@@ -158,9 +162,33 @@ const ExperienceSection = () => {
             >
               <CardContent className="p-0">
                 <div className="flex flex-col md:flex-row">
-                  <div className="p-6 md:p-8 md:w-1/3 bg-secondary/30 border-b md:border-b-0 md:border-r border-border/60">
+                  <div className="p-6 md:p-8 md:w-1/3 bg-secondary/30 border-b md:border-b-0 md:border-r border-border/60 flex flex-col">
+                    <div className="mb-4">
+                      <a 
+                        href={experience.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block hover:opacity-80 transition-opacity"
+                      >
+                        <img 
+                          src={experience.logo} 
+                          alt={`${experience.company} logo`} 
+                          className="max-h-16 w-auto mb-4"
+                        />
+                      </a>
+                    </div>
                     <div className="space-y-4">
-                      <h3 className="text-xl font-semibold">{experience.company}</h3>
+                      <h3 className="text-xl font-semibold">
+                        <a 
+                          href={experience.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center hover:text-primary transition-colors"
+                        >
+                          {experience.company}
+                          <ExternalLink className="ml-2 h-4 w-4 inline-block" />
+                        </a>
+                      </h3>
                       <p className="text-muted-foreground font-medium">{experience.title}</p>
                       
                       <div className="flex items-center text-sm text-muted-foreground space-x-2">
@@ -183,9 +211,9 @@ const ExperienceSection = () => {
                       </h4>
                       <ul className="space-y-3">
                         {experience.responsibilities.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-sm md:text-base">
+                          <li key={idx} className="flex items-start text-sm md:text-base text-left">
                             <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
-                            <span className="text-left">{item}</span>
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -199,9 +227,9 @@ const ExperienceSection = () => {
                         </h4>
                         <ul className="space-y-3">
                           {experience.achievements.map((item, idx) => (
-                            <li key={idx} className="flex items-start text-sm md:text-base">
+                            <li key={idx} className="flex items-start text-sm md:text-base text-left">
                               <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
-                              <span className="text-left">{item}</span>
+                              <span>{item}</span>
                             </li>
                           ))}
                         </ul>
