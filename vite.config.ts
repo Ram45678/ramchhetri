@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    base: '/ramchhetri/', // Important: Add this line
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
@@ -20,3 +21,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
