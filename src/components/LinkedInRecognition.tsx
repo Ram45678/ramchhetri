@@ -9,15 +9,15 @@ const LinkedInRecognition = () => {
       <div className="absolute inset-0 bg-primary/5 -z-10" />
       
       <div className="max-w-5xl mx-auto">
-        <div className="mb-12 section-fade-in">
+        <div className="mb-12 section-fade-in text-center">
           <Badge variant="outline" className="mb-4 px-3 py-1 text-sm border-primary/20 text-primary bg-primary/5">
             Professional Recognition
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-2">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-2">
             <Linkedin className="h-7 w-7 text-[#0077B5]" />
             LinkedIn Recognition
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Awarded among the top 25% of LinkedIn recruiters for consistent excellence in sourcing and engaging talent.
           </p>
         </div>
