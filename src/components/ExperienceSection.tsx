@@ -34,7 +34,8 @@ const experiences: ExperienceItem[] = [
       "Utilizing recruitment analytics to track hiring performance and optimize recruitment strategies.",
       "Conducting thorough candidate screenings and interviews to assess technical skills and cultural fit.",
       "Developing and maintaining relationships with external recruiters and staffing agencies to expand the talent pool.",
-      "Creating employer branding content, including blog posts and social media content, contributing to WeAre's positive employer perception. Received direct feedback from candidates stating that WeAre is highly regarded as an employer of choice, with many hires coming through employee referrals."
+      "Creating employer branding content, including blog posts and social media content, contributing to WeAre's positive employer perception.",
+      "Received direct feedback from candidates stating that WeAre is highly regarded as an employer of choice, with many hires coming through employee referrals."
     ],
     achievements: [
       "On-boarded 25+ new & diverse engineering team members since joining the company across Finland and Poland.",
