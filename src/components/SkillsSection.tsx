@@ -209,7 +209,7 @@ const SkillsSection = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-primary shrink-0" />
-                  <span className="text-sm">{item}</span>
+                  <span className="text-sm text-left">{item}</span>
                 </div>
               ))}
             </div>

@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -185,7 +184,7 @@ const ExperienceSection = () => {
                         {experience.responsibilities.map((item, idx) => (
                           <li key={idx} className="flex items-start text-sm md:text-base">
                             <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
-                            <span>{item}</span>
+                            <span className="text-left">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -201,7 +200,7 @@ const ExperienceSection = () => {
                           {experience.achievements.map((item, idx) => (
                             <li key={idx} className="flex items-start text-sm md:text-base">
                               <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
-                              <span>{item}</span>
+                              <span className="text-left">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -227,7 +226,7 @@ const ExperienceSection = () => {
                   <Card key={index} className="border border-border/40 bg-card/30 hover:bg-card/60 transition-colors">
                     <CardContent className="p-5 space-y-4">
                       <h4 className="font-medium text-base line-clamp-2">{work.title}</h4>
-                      <p className="text-sm text-muted-foreground line-clamp-3">{work.description}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-3 text-left">{work.description}</p>
                       <Button variant="outline" size="sm" asChild className="w-full mt-2 gap-1">
                         <a href={work.url} target="_blank" rel="noopener noreferrer">
                           Read Article <ExternalLink className="h-3 w-3 ml-1" />
