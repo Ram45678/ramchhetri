@@ -1,5 +1,5 @@
 
-import { useToast as useSonnerToast, toast } from "sonner";
+import { toast } from "sonner";
 
 type ToastProps = {
   title?: string;
@@ -17,7 +17,7 @@ export const useToast = () => {
       }
       
       return toast.success(title, {
-        description,
+          description,
       });
     },
     // Original toast function still available
