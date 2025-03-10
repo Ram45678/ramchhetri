@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, Linkedin, Send } from 'lucide-react';
+import { Mail, Linkedin, Send, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,22 +39,39 @@ const ContactSection = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Call our Supabase Edge Function
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: { name, email, message },
+      });
+      
+      if (error) {
+        throw new Error(error.message || 'Failed to send email');
+      }
+      
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you shortly.",
       });
       
+      // Reset form
       setName('');
       setEmail('');
       setMessage('');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Unable to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -191,8 +209,17 @@ const ContactSection = () => {
                 disabled={isSubmitting}
               >
                 <span className="relative flex items-center justify-center gap-2 z-10">
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send className="h-4 w-4" />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="h-4 w-4" />
+                    </>
+                  )}
                 </span>
                 <span className="absolute inset-0 bg-primary transform-gpu group-hover:scale-[1.03] transition-transform duration-300 ease-out" />
               </Button>
