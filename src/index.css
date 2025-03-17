@@ -7,46 +7,69 @@
 
 @layer base {
   :root {
-    /* Primary color: Neon Purple */
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 265 85% 50%;
+    --primary-rgb: 138, 43, 226;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 270 50% 90%;
+    --secondary-foreground: 270 50% 20%;
+    
+    --accent: 280 100% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 265 85% 50%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark theme colors (original dark theme) */
+    --background: 240 10% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 210 40% 98%;
+
     --primary: 265 85% 60%;
     --primary-rgb: 138, 43, 226;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary color: Dark Purple */
     --secondary: 270 50% 20%;
     --secondary-foreground: 210 40% 98%;
 
-    /* Accent color: Bright Purple */
     --accent: 280 100% 70%;
     --accent-foreground: 222 47% 11%;
 
-    /* Background and foreground */
-    --background: 240 10% 5%;
-    --foreground: 210 40% 98%;
-
-    /* Card styles */
-    --card: 240 10% 8%;
-    --card-foreground: 210 40% 98%;
-
-    /* Popover styles */
-    --popover: 240 10% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Muted styles */
     --muted: 240 10% 12%;
     --muted-foreground: 240 5% 64.9%;
 
-    /* Destructive styles */
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Border, input, and ring styles */
     --border: 240 10% 15%;
     --input: 240 10% 15%;
     --ring: 265 85% 60%;
-
-    /* Border radius */
-    --radius: 0.5rem;
   }
 }
 
