@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <a 
               href="mailto:chhetriram076@gmail.com" 
-              className="h-10 w-10 flex items-center justify-center rounded-full neon-border text-primary hover:text-primary/90 hover:neon-glow transition-all"
+              className="h-10 w-10 flex items-center justify-center rounded-full dark:neon-border dark:text-primary light:text-foreground light:bg-secondary/80 light:border light:border-border hover:text-primary/90 dark:hover:neon-glow transition-all"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
@@ -23,7 +23,7 @@ const Footer = () => {
               href="http://www.linkedin.com/in/ramchhetri" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="h-10 w-10 flex items-center justify-center rounded-full neon-border text-primary hover:text-primary/90 hover:neon-glow transition-all"
+              className="h-10 w-10 flex items-center justify-center rounded-full dark:neon-border dark:text-primary light:text-foreground light:bg-secondary/80 light:border light:border-border hover:text-primary/90 dark:hover:neon-glow transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
@@ -32,7 +32,7 @@ const Footer = () => {
               href="#" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="h-10 w-10 flex items-center justify-center rounded-full neon-border text-primary hover:text-primary/90 hover:neon-glow transition-all"
+              className="h-10 w-10 flex items-center justify-center rounded-full dark:neon-border dark:text-primary light:text-foreground light:bg-secondary/80 light:border light:border-border hover:text-primary/90 dark:hover:neon-glow transition-all"
               aria-label="Github"
             >
               <Github className="h-5 w-5" />

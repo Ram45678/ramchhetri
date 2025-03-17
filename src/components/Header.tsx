@@ -74,7 +74,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
-              className="btn-neon rounded-full"
+              className="rounded-full dark:btn-neon light:bg-secondary/80 light:text-foreground hover:bg-primary/10 dark:hover:bg-primary/20 transition-all"
             >
               <a 
                 href="mailto:chhetriram076@gmail.com" 
@@ -89,7 +89,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
-              className="btn-neon rounded-full"
+              className="rounded-full dark:btn-neon light:bg-secondary/80 light:text-foreground hover:bg-primary/10 dark:hover:bg-primary/20 transition-all"
             >
               <a 
                 href="http://www.linkedin.com/in/ramchhetri" 
@@ -142,7 +142,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="btn-neon rounded-full h-12 w-12"
+                className="rounded-full dark:btn-neon light:bg-secondary/80 light:text-foreground hover:bg-primary/10 dark:hover:bg-primary/20 h-12 w-12 transition-all"
               >
                 <a 
                   href="mailto:chhetriram076@gmail.com" 
@@ -157,7 +157,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="btn-neon rounded-full h-12 w-12"
+                className="rounded-full dark:btn-neon light:bg-secondary/80 light:text-foreground hover:bg-primary/10 dark:hover:bg-primary/20 h-12 w-12 transition-all"
               >
                 <a 
                   href="http://www.linkedin.com/in/ramchhetri" 
