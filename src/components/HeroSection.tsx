@@ -29,11 +29,6 @@ const HeroSection = () => {
       id="hero" 
       className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-10 lg:px-20 pt-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/50 to-background" />
-      
-      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[500px] bg-[radial-gradient(circle_at_top,rgba(var(--primary-rgb),0.05),transparent_50%)]" />
-      </div>
       
       <div className="w-full max-w-5xl mx-auto z-10 flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
         <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl animate-fadeIn">
