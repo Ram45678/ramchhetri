@@ -47,11 +47,9 @@ const Header = () => {
           onClick={() => scrollToSection('hero')}
         >
           <a href="https://www.canva.com/design/DAGiAbVOnig/xzzh-Uy_AYhdzXN8H2B0xg/watch" target="_blank" rel="noopener noreferrer">
-            <img
-              src="/lovable-uploads/5bae91be-c115-42dd-b943-a63fbb85f09f.png"
-              alt="Ram Chhetri Logo"
-              className="h-10 w-auto"
-            />
+            <div className="text-lg md:text-xl font-display font-semibold transition-all hover:text-primary neon-text">
+              RAM CHHETRI
+            </div>
           </a>
         </div>
 
