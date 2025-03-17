@@ -69,6 +69,7 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button 
               variant="ghost"
               size="icon"
@@ -103,17 +104,20 @@ const Header = () => {
         </nav>
 
         {/* Mobile menu button */}
-        <button
-          className="md:hidden text-foreground p-1 neon-text"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            className="text-foreground p-1 neon-text"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

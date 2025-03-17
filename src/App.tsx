@@ -11,7 +11,7 @@ function App() {
   const baseUrl = '/';
 
   return (
-    <ThemeProvider defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider defaultTheme="dark" enableSystem={true}>
       <Router basename={baseUrl}>
         <div className="responsive-container">
           <Routes>
