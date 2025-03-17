@@ -1,9 +1,22 @@
-
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Linkedin, Award, Search, Users, BarChart, Clock } from 'lucide-react';
 
 const LinkedInRecognition = () => {
+  // Fix for local development - ensure the image path is correct
+  const getImagePath = (path: string) => {
+    if (!path) return null;
+    
+    // If the path already starts with the base URL or is an absolute URL, use it as is
+    if (path.startsWith('http') || path.startsWith(import.meta.env.BASE_URL)) {
+      return path;
+    }
+    
+    // Otherwise, prepend the base URL (removes leading slash if present)
+    const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${import.meta.env.BASE_URL}${normalizedPath}`;
+  };
+
   return (
     <section id="linkedin-recognition" className="py-20 px-6 md:px-10 lg:px-20 bg-gradient-to-b from-background to-background/80 relative">
       <div className="absolute inset-0 bg-primary/5 -z-10" />
@@ -28,7 +41,7 @@ const LinkedInRecognition = () => {
               <div className="flex flex-col items-center">
                 <div className="w-full max-w-md">
                   <img 
-                    src="/lovable-uploads/40fbc7a9-6b4b-48d5-b6bf-e4c484698e6f.png" 
+                    src={getImagePath("/lovable-uploads/40fbc7a9-6b4b-48d5-b6bf-e4c484698e6f.png")} 
                     alt="LinkedIn Top 25% Recruiter Recognition" 
                     className="w-full h-auto rounded-lg"
                   />
@@ -42,7 +55,7 @@ const LinkedInRecognition = () => {
               <div className="flex flex-col items-center">
                 <div className="w-full max-w-md">
                   <img 
-                    src="/lovable-uploads/87b9d2ee-a4ce-4aa3-81d4-4575698e66e2.png" 
+                    src={getImagePath("/lovable-uploads/87b9d2ee-a4ce-4aa3-81d4-4575698e66e2.png")} 
                     alt="LinkedIn Recruiting Statistics" 
                     className="w-full h-auto rounded-lg"
                   />

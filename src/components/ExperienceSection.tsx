@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -106,6 +105,20 @@ const publishedWorks: PublishedWork[] = [
 const ExperienceSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
+  // Fix for local development - ensure the image path is correct
+  const getImagePath = (path: string) => {
+    if (!path) return null;
+    
+    // If the path already starts with the base URL or is an absolute URL, use it as is
+    if (path.startsWith('http') || path.startsWith(import.meta.env.BASE_URL)) {
+      return path;
+    }
+    
+    // Otherwise, prepend the base URL (removes leading slash if present)
+    const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${import.meta.env.BASE_URL}${normalizedPath}`;
+  };
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -171,7 +184,7 @@ const ExperienceSection = () => {
                         className="inline-block hover:opacity-80 transition-opacity"
                       >
                         <img 
-                          src={experience.logo} 
+                          src={getImagePath(experience.logo)} 
                           alt={`${experience.company} logo`} 
                           className="max-h-16 w-auto mb-4"
                         />

@@ -1,5 +1,7 @@
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, BookOpen, Calendar, GraduationCap } from 'lucide-react';
+import { getImagePath } from '@/lib/image-utils';
 
 interface Education {
   institution: string;
@@ -16,20 +18,6 @@ interface EducationCardProps {
 }
 
 const EducationCard = ({ education }: EducationCardProps) => {
-  // Fix for local development - ensure the image path is correct
-  const getImagePath = (path: string) => {
-    if (!path) return null;
-    
-    // If the path already starts with the base URL or is an absolute URL, use it as is
-    if (path.startsWith('http') || path.startsWith(import.meta.env.BASE_URL)) {
-      return path;
-    }
-    
-    // Otherwise, prepend the base URL (removes leading slash if present)
-    const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
-    return `${import.meta.env.BASE_URL}${normalizedPath}`;
-  };
-
   return (
     <Card 
       className="border border-border/60 bg-card/50 backdrop-blur-sm overflow-hidden

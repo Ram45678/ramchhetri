@@ -1,9 +1,22 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
+  // Fix for local development - ensure the image path is correct
+  const getImagePath = (path: string) => {
+    if (!path) return null;
+    
+    // If the path already starts with the base URL or is an absolute URL, use it as is
+    if (path.startsWith('http') || path.startsWith(import.meta.env.BASE_URL)) {
+      return path;
+    }
+    
+    // Otherwise, prepend the base URL (removes leading slash if present)
+    const normalizedPath = path.startsWith('/') ? path.substring(1) : path;
+    return `${import.meta.env.BASE_URL}${normalizedPath}`;
+  };
+
   const scrollToExperience = () => {
     const experienceSection = document.getElementById('experience');
     if (experienceSection) {
@@ -25,7 +38,7 @@ const HeroSection = () => {
       <div className="w-full max-w-5xl mx-auto z-10 flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
         <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl animate-fadeIn">
           <img 
-            src="/lovable-uploads/fecbc1d9-aeb6-4cf9-ada0-34d7ef6caf96.png" 
+            src={getImagePath("/lovable-uploads/fecbc1d9-aeb6-4cf9-ada0-34d7ef6caf96.png")} 
             alt="Ram Chhetri" 
             className="w-full h-full object-cover"
           />
