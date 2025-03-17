@@ -78,6 +78,16 @@ export default {
           green: "#32CD32",  // LimeGreen
           orange: "#FF8C00", // DarkOrange
         },
+        dark: {
+          background: "#1A1F2C",    // Dark Purple
+          card: "#221F26",          // Dark Charcoal
+          foreground: "#E1E1E6",    // Light Gray for text
+          muted: "#403E43",         // Charcoal Gray
+          border: "#333333",        // Dark Gray
+          primary: "#9B7AEF",       // Light Purple
+          secondary: "#6DCEBC",     // Light Teal
+          accent: "#FF85C8",        // Light Pink
+        },
       },
       fontFamily: {
         sans: ["Inter var", "sans-serif"],
@@ -174,6 +184,12 @@ export default {
           backdropFilter: "blur(12px)",
           borderRadius: "var(--radius)",
           border: "1px solid rgba(255, 255, 255, 0.12)",
+        },
+        ".dark-glass": {
+          background: "rgba(26, 31, 44, 0.5)",
+          backdropFilter: "blur(12px)",
+          borderRadius: "var(--radius)",
+          border: "1px solid rgba(255, 255, 255, 0.05)",
         },
       });
     }),
