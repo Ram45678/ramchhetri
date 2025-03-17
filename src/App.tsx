@@ -7,8 +7,8 @@ import { Toaster } from './components/ui/sonner';
 import './App.css';
 
 function App() {
-  // Get the base URL from the vite config
-  const baseUrl = import.meta.env.BASE_URL || '/';
+  // Get the base URL from environment, defaulting to '/'
+  const baseUrl = '/';
 
   return (
     <ThemeProvider defaultTheme="system" enableSystem>
