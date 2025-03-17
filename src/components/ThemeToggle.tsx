@@ -18,6 +18,10 @@ export function ThemeToggle() {
     return null;
   }
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <TooltipProvider>
       <Tooltip>
@@ -25,7 +29,7 @@ export function ThemeToggle() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={toggleTheme}
             className="rounded-full neon-border"
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
