@@ -43,10 +43,16 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div 
-          className="text-lg md:text-xl font-display font-semibold cursor-pointer transition-all hover:text-primary neon-text"
+          className="cursor-pointer transition-all hover:opacity-80"
           onClick={() => scrollToSection('hero')}
         >
-          Ram Chhetri
+          <a href="https://www.canva.com/design/DAGiAbVOnig/xzzh-Uy_AYhdzXN8H2B0xg/watch" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/lovable-uploads/5bae91be-c115-42dd-b943-a63fbb85f09f.png"
+              alt="Ram Chhetri Logo"
+              className="h-10 w-auto"
+            />
+          </a>
         </div>
 
         {/* Desktop navigation */}
