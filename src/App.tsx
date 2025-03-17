@@ -13,10 +13,12 @@ function App() {
   return (
     <ThemeProvider defaultTheme="system" enableSystem>
       <Router basename={baseUrl}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="responsive-container">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </Router>
       <Toaster position="top-right" />
     </ThemeProvider>

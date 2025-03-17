@@ -14,7 +14,13 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
       screens: {
         "2xl": "1400px",
       },
@@ -63,6 +69,14 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        vibrant: {
+          purple: "#8A2BE2", // BlueViolet
+          teal: "#20B2AA",   // LightSeaGreen
+          pink: "#FF69B4",   // HotPink
+          blue: "#1E90FF",   // DodgerBlue
+          green: "#32CD32",  // LimeGreen
+          orange: "#FF8C00", // DarkOrange
         },
       },
       fontFamily: {

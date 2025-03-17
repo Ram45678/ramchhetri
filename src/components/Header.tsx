@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { Mail, Linkedin, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +34,10 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 md:px-10 lg:px-20',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 sm:px-6 md:px-10 lg:px-20',
         isScrolled 
-          ? 'py-3 bg-background/80 backdrop-blur-lg shadow-sm' 
-          : 'py-6 bg-transparent'
+          ? 'py-2 bg-background/80 backdrop-blur-lg shadow-sm' 
+          : 'py-4 sm:py-6 bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -66,13 +68,13 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
+              className="btn-vibrant-secondary text-white rounded-full"
             >
               <a 
                 href="mailto:chhetriram076@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Email"
-                className="rounded-full hover:bg-accent"
               >
                 <Mail className="h-5 w-5" />
               </a>
@@ -81,13 +83,13 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
+              className="btn-vibrant-primary text-white rounded-full"
             >
               <a 
                 href="http://www.linkedin.com/in/ramchhetri" 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="rounded-full hover:bg-accent"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -97,7 +99,7 @@ const Header = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-1"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -111,7 +113,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] bg-background/95 backdrop-blur-lg md:hidden z-40 animate-fade-down">
+        <div className="fixed top-[49px] left-0 w-full h-[calc(100vh-49px)] bg-background/95 backdrop-blur-lg md:hidden z-40 animate-fade-down">
           <div className="flex flex-col items-center justify-center h-full">
             <ul className="flex flex-col items-center gap-8 mb-10">
               {['experience', 'skills', 'education', 'contact'].map((item) => (
@@ -131,7 +133,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="rounded-full h-12 w-12"
+                className="btn-vibrant-secondary text-white rounded-full h-12 w-12"
               >
                 <a 
                   href="mailto:chhetriram076@gmail.com" 
@@ -146,7 +148,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="rounded-full h-12 w-12"
+                className="btn-vibrant-primary text-white rounded-full h-12 w-12"
               >
                 <a 
                   href="http://www.linkedin.com/in/ramchhetri" 
