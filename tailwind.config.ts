@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
@@ -70,23 +69,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        vibrant: {
+        neon: {
           purple: "#8A2BE2", // BlueViolet
-          teal: "#20B2AA",   // LightSeaGreen
-          pink: "#FF69B4",   // HotPink
-          blue: "#1E90FF",   // DodgerBlue
-          green: "#32CD32",  // LimeGreen
-          orange: "#FF8C00", // DarkOrange
-        },
-        dark: {
-          background: "#1A1F2C",    // Dark Purple
-          card: "#221F26",          // Dark Charcoal
-          foreground: "#E1E1E6",    // Light Gray for text
-          muted: "#403E43",         // Charcoal Gray
-          border: "#333333",        // Dark Gray
-          primary: "#9B7AEF",       // Light Purple
-          secondary: "#6DCEBC",     // Light Teal
-          accent: "#FF85C8",        // Light Pink
+          pink: "#FF00FF",   // Magenta
+          blue: "#00BFFF",   // Deep Sky Blue
+          green: "#00FF7F",  // Spring Green
         },
       },
       fontFamily: {
@@ -180,16 +167,20 @@ export default {
           transformStyle: "preserve-3d",
         },
         ".glass": {
-          background: "rgba(255, 255, 255, 0.08)",
+          background: "rgba(18, 18, 23, 0.4)",
           backdropFilter: "blur(12px)",
           borderRadius: "var(--radius)",
-          border: "1px solid rgba(255, 255, 255, 0.12)",
+          border: "1px solid rgba(138, 43, 226, 0.2)",
         },
-        ".dark-glass": {
-          background: "rgba(26, 31, 44, 0.5)",
-          backdropFilter: "blur(12px)",
-          borderRadius: "var(--radius)",
-          border: "1px solid rgba(255, 255, 255, 0.05)",
+        ".neon-glow": {
+          boxShadow: "0 0 15px rgba(138, 43, 226, 0.5), 0 0 30px rgba(138, 43, 226, 0.3)",
+        },
+        ".neon-text": {
+          textShadow: "0 0 5px rgba(138, 43, 226, 0.7), 0 0 10px rgba(138, 43, 226, 0.5)",
+        },
+        ".neon-border": {
+          border: "1px solid rgba(138, 43, 226, 0.5)",
+          boxShadow: "0 0 5px rgba(138, 43, 226, 0.3), inset 0 0 5px rgba(138, 43, 226, 0.2)",
         },
       });
     }),

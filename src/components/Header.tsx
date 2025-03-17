@@ -4,6 +4,7 @@ import { Mail, Linkedin, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ThemeToggle } from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,13 +37,13 @@ const Header = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-4 sm:px-6 md:px-10 lg:px-20',
         isScrolled 
-          ? 'py-2 bg-background/80 backdrop-blur-lg shadow-sm' 
+          ? 'py-2 bg-background/80 backdrop-blur-lg shadow-sm border-b border-primary/20' 
           : 'py-4 sm:py-6 bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div 
-          className="text-lg md:text-xl font-display font-semibold cursor-pointer transition-all hover:text-primary"
+          className="text-lg md:text-xl font-display font-semibold cursor-pointer transition-all hover:text-primary neon-text"
           onClick={() => scrollToSection('hero')}
         >
           Ram Chhetri
@@ -55,7 +56,7 @@ const Header = () => {
               <li key={item}>
                 <button
                   onClick={() => scrollToSection(item)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition link-underline"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition link-underline"
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
@@ -68,7 +69,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
-              className="btn-vibrant-secondary text-white rounded-full"
+              className="btn-neon rounded-full"
             >
               <a 
                 href="mailto:chhetriram076@gmail.com" 
@@ -83,7 +84,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               asChild
-              className="btn-vibrant-primary text-white rounded-full"
+              className="btn-neon rounded-full"
             >
               <a 
                 href="http://www.linkedin.com/in/ramchhetri" 
@@ -99,7 +100,7 @@ const Header = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-foreground p-1"
+          className="md:hidden text-foreground p-1 neon-text"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
@@ -120,7 +121,7 @@ const Header = () => {
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item)}
-                    className="text-lg font-medium text-foreground"
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
@@ -133,7 +134,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="btn-vibrant-secondary text-white rounded-full h-12 w-12"
+                className="btn-neon rounded-full h-12 w-12"
               >
                 <a 
                   href="mailto:chhetriram076@gmail.com" 
@@ -148,7 +149,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="btn-vibrant-primary text-white rounded-full h-12 w-12"
+                className="btn-neon rounded-full h-12 w-12"
               >
                 <a 
                   href="http://www.linkedin.com/in/ramchhetri" 

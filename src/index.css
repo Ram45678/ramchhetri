@@ -7,85 +7,46 @@
 
 @layer base {
   :root {
-    /* Primary color: Vibrant Purple */
+    /* Primary color: Neon Purple */
     --primary: 265 85% 60%;
     --primary-rgb: 138, 43, 226;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary color: Vibrant Teal */
-    --secondary: 180 75% 45%;
-    --secondary-foreground: 222 47% 11%;
+    /* Secondary color: Dark Purple */
+    --secondary: 270 50% 20%;
+    --secondary-foreground: 210 40% 98%;
 
-    /* Accent color: Vibrant Pink */
-    --accent: 330 90% 65%;
+    /* Accent color: Bright Purple */
+    --accent: 280 100% 70%;
     --accent-foreground: 222 47% 11%;
 
     /* Background and foreground */
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 240 10% 5%;
+    --foreground: 210 40% 98%;
 
     /* Card styles */
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 240 10% 8%;
+    --card-foreground: 210 40% 98%;
 
     /* Popover styles */
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 210 40% 98%;
 
     /* Muted styles */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 25% 40%;
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 5% 64.9%;
 
     /* Destructive styles */
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     /* Border, input, and ring styles */
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 47% 11%;
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 265 85% 60%;
 
     /* Border radius */
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    /* Primary color in dark mode */
-    --primary: 265 85% 65%;
-    --primary-foreground: 222 47% 11%;
-
-    /* Secondary color in dark mode */
-    --secondary: 180 75% 50%;
-    --secondary-foreground: 210 40% 98%;
-
-    /* Accent color in dark mode */
-    --accent: 330 90% 70%;
-    --accent-foreground: 210 40% 98%;
-
-    /* Background and foreground */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-
-    /* Card styles */
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-
-    /* Popover styles */
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Muted styles */
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    /* Destructive styles */
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* Border, input, and ring styles */
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 212 73% 80%;
+    --radius: 0.5rem;
   }
 }
 
@@ -113,10 +74,10 @@
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 100% 0%, rgba(var(--primary-rgb), 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, rgba(var(--primary-rgb), 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 0% 100%, rgba(var(--primary-rgb), 0.03) 0%, transparent 50%);
+      radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -132,11 +93,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-secondary/50;
+  @apply bg-muted;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-primary/50 transition-colors hover:bg-primary/70;
+  @apply rounded-full bg-primary/60 transition-colors hover:bg-primary/80;
 }
 
 /* Selection styling */
@@ -172,6 +133,10 @@
 
   .glass-panel {
     @apply backdrop-blur-sm bg-background/50 border border-border/40 shadow-lg;
+  }
+
+  .neo-glass {
+    @apply backdrop-blur-lg bg-black/40 border border-primary/20 shadow-lg;
   }
 
   .gradient-border {
@@ -217,17 +182,17 @@
     background-size: 24px 24px;
   }
 
-  /* Vibrant button styles */
-  .btn-vibrant-primary {
-    @apply bg-gradient-to-r from-primary to-accent hover:brightness-110 transition-all;
+  /* Neon button styles */
+  .btn-neon {
+    @apply bg-black text-primary border border-primary/50 shadow-[0_0_15px_rgba(138,43,226,0.5)] hover:shadow-[0_0_25px_rgba(138,43,226,0.7)] transition-all duration-300;
   }
 
-  .btn-vibrant-secondary {
-    @apply bg-gradient-to-r from-secondary to-primary/70 hover:brightness-110 transition-all;
+  .btn-neon-primary {
+    @apply bg-primary text-black font-semibold shadow-[0_0_15px_rgba(138,43,226,0.5)] hover:shadow-[0_0_25px_rgba(138,43,226,0.7)] hover:bg-primary/90 transition-all;
   }
 
-  .btn-vibrant-accent {
-    @apply bg-gradient-to-r from-accent to-primary hover:brightness-110 transition-all;
+  .btn-neon-outline {
+    @apply bg-transparent border border-primary text-primary shadow-[0_0_10px_rgba(138,43,226,0.3)] hover:shadow-[0_0_20px_rgba(138,43,226,0.6)] hover:bg-primary/10 transition-all;
   }
 
   /* Responsive padding */
@@ -237,23 +202,5 @@
 
   .responsive-container {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Dark mode specific utilities */
-  .dark-card {
-    @apply bg-dark-card border border-dark-border shadow-lg;
-  }
-
-  .dark-glass {
-    @apply backdrop-blur-md bg-dark-background/60 border border-white/5;
-  }
-
-  /* Dark theme button styles */
-  .btn-dark-primary {
-    @apply bg-gradient-to-r from-dark-primary to-accent/80 hover:brightness-110 transition-all;
-  }
-
-  .btn-dark-secondary {
-    @apply bg-gradient-to-r from-dark-secondary to-dark-primary/70 hover:brightness-110 transition-all;
   }
 }
