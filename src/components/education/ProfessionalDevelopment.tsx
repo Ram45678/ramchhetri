@@ -17,7 +17,7 @@ const ProfessionalDevelopment = () => {
           <div className="p-4 rounded-lg bg-card/50 border border-border/40">
             <h4 className="font-medium mb-2">Technical Recruitment Specialization</h4>
             <p className="text-sm text-muted-foreground">
-              Advanced knowledge in recruiting for engineering, cloud, and cybersecurity roles.
+              Advanced knowledge in recruiting for engineering, cloud, and Observability roles.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card/50 border border-border/40">
