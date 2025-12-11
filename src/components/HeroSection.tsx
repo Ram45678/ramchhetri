@@ -51,11 +51,17 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <p className="max-w-2xl text-lg md:text-xl text-muted-foreground animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            Hi, I’m Ram. I help companies hire better people in a smarter way.<br>
-            I work in talent acquisition with a focus on tech and cloud roles in Finland and Poland. Most of my work sits at the intersection of recruitment, employer branding and marketing. I enjoy understanding how a business works, what kind of people it really needs, and then building a clear, honest process to find and hire them. <br>
-            At WeAre Solutions, I am the sole Talent Acquisition Specialist. I support leadership in hiring senior engineers and specialists, and I helped WeAre expand into the Polish market by building our first engineering team there. Besides recruitment, I also work on content and campaigns around our observability services, making sure our hiring, brand and messaging all point in the same direction.
-          </p>
+          <div className="max-w-2xl text-lg md:text-xl text-muted-foreground animate-fadeIn space-y-4" style={{ animationDelay: "0.2s" }}>
+            <p>
+              Hi, I'm Ram. I help companies hire better people in a smarter way.
+            </p>
+            <p>
+              I work in talent acquisition with a focus on tech and cloud roles in Finland and Poland. Most of my work sits at the intersection of recruitment, employer branding and marketing. I enjoy understanding how a business works, what kind of people it really needs, and then building a clear, honest process to find and hire them.
+            </p>
+            <p>
+              At WeAre Solutions, I am the sole Talent Acquisition Specialist. I support leadership in hiring senior engineers and specialists, and I helped WeAre expand into the Polish market by building our first engineering team there. Besides recruitment, I also work on content and campaigns around our observability services, making sure our hiring, brand and messaging all point in the same direction.
+            </p>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
             <Button 
