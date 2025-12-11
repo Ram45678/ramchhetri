@@ -27,7 +27,7 @@ const experiences: ExperienceItem[] = [
     company: "WeAre Solutions Oy",
     title: "Talent Acquisition Specialist",
     period: "November 2022 - Present",
-    location: "Vantaa / Espoo, Finland",
+    location: "Helsinki, Finland",
     responsibilities: [
       "Supporting recruitment mainly for senior and niche roles, such as software developers, cloud engineers, DevOps and observability engineers, IAM specialists and other consulting profiles.",
       "Helping teams hire in both Finland and Poland, with a strong focus on understanding the real needs of each team instead of just matching keywords to CVs.",
