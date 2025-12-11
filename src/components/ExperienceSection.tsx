@@ -11,6 +11,7 @@ interface ExperienceItem {
   location: string;
   responsibilities: string[];
   achievements?: string[];
+  branding?: string[];
   link: string;
   logo: string;
 }
@@ -26,23 +27,26 @@ const experiences: ExperienceItem[] = [
     company: "WeAre Solutions Oy",
     title: "Talent Acquisition Specialist",
     period: "November 2022 - Present",
-    location: "Helsinki",
+    location: "Vantaa / Espoo, Finland",
     responsibilities: [
-      "Leading end-to-end recruitment for top-tier software developers, cloud engineers, IAM experts, cybersecurity specialists, DevOps/DevSecOps engineers, and product managers across Finland and Poland.",
-      "Partnering closely with hiring managers and technical teams to define job requirements and ensure talent alignment.",
-      "Developing and executing data-driven sourcing strategies, reducing time-to-hire by 25% and improving the vacancy fill rate to 90%.",
-      "Improving candidate experience, achieving a candidate satisfaction score of 85% focusing on a personalized approach to understanding candidates deeply rather than relying solely on automation.",
-      "Utilizing recruitment analytics to track hiring performance and optimize recruitment strategies.",
-      "Conducting thorough candidate screenings and interviews to assess technical skills and cultural fit.",
-      "Developing and maintaining relationships with external recruiters and staffing agencies to expand the talent pool.",
-      "Creating employer branding content, including blog posts and social media content, contributing to WeAre's positive employer perception.",
-      "Received direct feedback from candidates stating that WeAre is highly regarded as an employer of choice, with many hires coming through employee referrals."
+      "Supporting recruitment mainly for senior and niche roles, such as software developers, cloud engineers, DevOps and observability engineers, IAM specialists and other consulting profiles.",
+      "Helping teams hire in both Finland and Poland, with a strong focus on understanding the real needs of each team instead of just matching keywords to CVs.",
+      "Owning the recruitment process when there is a hiring need: clarifying role requirements, writing and publishing job ads, sourcing and approaching candidates, running screening calls and coordinating interviews.",
+      "Keeping communication straightforward and honest so that both candidates and stakeholders know what is happening, what the next step is and why.",
+      "Building and maintaining relationships with recruitment agencies, subcontractors and freelancers when external support is needed.",
+      "Working with marketing to strengthen WeAre's positioning in observability and modern cloud engineering.",
+      "Writing blogs and LinkedIn content, and contributing ideas for carousels, videos and campaigns that explain what we do in a clear and concrete way.",
+      "Making sure our recruitment messages and marketing tell a consistent story, so candidates and clients see the same WeAre that we experience internally."
     ],
     achievements: [
-      "On-boarded 25+ new & diverse engineering team members since joining the company across Finland and Poland.",
-      "Reduced time-to-fill from 45 to 30 days, ensuring faster hiring cycles.",
-      "Increased company career page visits, applicant count and conversion rate.",
-      "Awarded Top 25% of LinkedIn recruiter for consistent excellence in sourcing and engaging talent from LinkedIn."
+      "Helped WeAre expand into the Polish market by building our first engineering and consulting team.",
+      "Acted as a trusted partner to leadership, bringing insight on talent availability, salary expectations and hiring feasibility for different tech roles.",
+      "Recognised in the Top 25% of LinkedIn Recruiters (2023) for sourcing and engagement, reflecting a strong focus on personalised outreach and respectful candidate communication."
+    ],
+    branding: [
+      "Working with marketing to strengthen WeAre's positioning in observability and modern cloud engineering.",
+      "Writing blogs and LinkedIn content, and contributing ideas for carousels, videos and campaigns that explain what we do in a clear and concrete way.",
+      "Making sure our recruitment messages and marketing tell a consistent story, so candidates and clients see the same WeAre that we experience internally."
     ],
     link: "https://www.weare.fi/en/",
     logo: "/lovable-uploads/9cd06576-3a10-40e4-8174-e326f27bacb1.png",
@@ -51,13 +55,13 @@ const experiences: ExperienceItem[] = [
     company: "Digipool Group Oy",
     title: "Talent Acquisition Specialist",
     period: "May 2022 - September 2022",
-    location: "Helsinki",
+    location: "Helsinki Metropolitan Area",
     responsibilities: [
-      "Conducted end-to-end recruitment for software developers, QA leads, and data engineers.",
-      "Built and maintained a large talent pool of engineering candidates, enabling faster sourcing for client projects.",
-      "Conducted weekly candidate calls, interviews ensuring an efficient screening process.",
-      "Partnered with clients to understand staffing needs, reducing time-to-fill days significantly.",
-      "Identified and researched new prospective clients, contributing to business development efforts."
+      "Managed end-to-end recruitment processes for multiple clients, mainly for senior software and QA roles.",
+      "Conducted intake discussions with hiring managers to understand team structures, project needs and what a 'good hire' would look like in their context.",
+      "Sourced and approached candidates through LinkedIn and other channels, screened them and coordinated the interview process between candidates and clients.",
+      "Focused on delivering small, well-matched shortlists that led to confident, long-term hires rather than quick but risky placements.",
+      "Supported client employer branding and visibility by suggesting improvements to job ad content and messaging."
     ],
     link: "https://digipool.fi/",
     logo: "/lovable-uploads/047c180f-32a9-4c5f-a5de-5122c40fc053.png",
@@ -236,10 +240,27 @@ const ExperienceSection = () => {
                       <div>
                         <h4 className="text-md font-medium flex items-center text-muted-foreground mb-3">
                           <Award className="h-4 w-4 mr-2" />
-                          Achievements
+                          Key Achievements
                         </h4>
                         <ul className="space-y-3">
                           {experience.achievements.map((item, idx) => (
+                            <li key={idx} className="flex items-start text-sm md:text-base text-left">
+                              <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {experience.branding && (
+                      <div>
+                        <h4 className="text-md font-medium flex items-center text-muted-foreground mb-3">
+                          <FileText className="h-4 w-4 mr-2" />
+                          Employer branding & observability marketing
+                        </h4>
+                        <ul className="space-y-3">
+                          {experience.branding.map((item, idx) => (
                             <li key={idx} className="flex items-start text-sm md:text-base text-left">
                               <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-0.5 mr-2" />
                               <span>{item}</span>
